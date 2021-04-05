@@ -5,6 +5,6 @@
 	#include<string.h>
 	#include<stdio.h>
 
-	uint16_t ob_ADC();
+	float ob_ADC();
 
 #endif /*INC_ADC_h*/

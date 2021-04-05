@@ -70,7 +70,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	//Definir una variable donde va el dato
-	uint16_t valor_adc;
+	float valor_adc;
 	//Y una vector donde incluir los datos obtenidos
 	char msg[10];
   /* USER CODE END 1 */
@@ -81,6 +81,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
 
   /* USER CODE END Init */
 
@@ -105,7 +106,8 @@ int main(void)
   {
 	  valor_adc=ob_ADC();
 
-	  sprintf(msg,"%hu\r\n",valor_adc);
+	  // convertir a una cadena e imprimir
+	  sprintf(msg,"%.2f V\r\n",valor_adc);
 	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
 	  HAL_Delay(100);
